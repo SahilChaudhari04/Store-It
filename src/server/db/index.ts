@@ -15,11 +15,11 @@ const globalForDb = globalThis as unknown as {
 const conn =
   globalForDb.conn ??
   createPool({
-    host: env.SINGLESTORE_HOST,
+    host: env.SINGLESTORE_HOST.trim(),
     port: parseInt(env.SINGLESTORE_PORT),
-    user: env.SINGLESTORE_USER,
-    password: env.SINGLESTORE_PASS,
-    database: env.SINGLESTORE_DB_NAME,
+    user: env.SINGLESTORE_USER.trim(),
+    password: env.SINGLESTORE_PASS.trim(),
+    database: env.SINGLESTORE_DB_NAME.trim(),
     ssl: {},
     maxIdle: 0,
   });
