@@ -28,7 +28,7 @@ export default function DriveContents(props: {
               <h1 className="text-2xl font-bold text-white mr-4">Store-It</h1>
               <div className="flex items-center text-sm">
                 <Link
-                  href="/f/1"
+                  href="/drive"
                   className="mr-2 text-gray-400 hover:text-white transition-colors"
                 >
                   My Drive

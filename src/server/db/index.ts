@@ -20,9 +20,10 @@ const conn =
     user: env.SINGLESTORE_USER.trim(),
     password: env.SINGLESTORE_PASS.trim(),
     database: env.SINGLESTORE_DB_NAME.trim(),
-    ssl: {},
+    ssl: { rejectUnauthorized: false },
     maxIdle: 0,
   });
+
 if (env.NODE_ENV !== "production") globalForDb.conn = conn;
 
 conn.addListener("error", (err) => {
